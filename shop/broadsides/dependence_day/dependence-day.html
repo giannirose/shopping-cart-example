@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no">
+  <title> Broadside "Dependence Day" by John Daniel</title>
+  <meta name="description"
+    content="A broadside printed by lone goose press of writing by the Oregon writer John Daniel" />
+  <link rel="stylesheet" href="../../../assets/css/lonegoose.css" type="text/css">
+  <link rel="stylesheet" href="../../../assets/css/lonegoose-gridflex.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="h1 header">
+      <p><a href="/">lone goose press</a></p>
+    </header>
+    <nav>
+      <ul class="navigation-main">
+        <li>
+          <a href="../../../index.html">Home</a>
+        </li>
+        <li>
+          <a href="../../../publications/books/books.html">Books</a>
+        </li>
+        <li>
+          <a href="../../../publications/broadsides/broadsides.html">Broadsides</a>
+        </li>
+        <li>
+          <a href="../../../shop/cart.html">Cart</a>
+      </ul>
+    </nav>
+    <!-- Add page content here-->
+    <div class="page-content">
+      <!--heading area-->
+      <div class="text-center folio-entry">
+        <h1 class="h1">
+          Dependence Day
+        </h1>
+        <p class="author">By John Daniel</p>
+        <p>Art by Margot Voorhies Thompson</p>
+      </div>
+      <!--An intro if needed, as for an announcement or to explain multiple versions-->
+      <!--Begin grid area-->
+      <div class="product boxer ">
+        <div class="gridimg">
+          <img src="dependenceday.jpg" alt="Dependence Day">
+        </div>
+        <div class="box shop minor boxed">
+          <p>Fall 2007</p>
+          <p>11.5 by 18 inches</p>
+          <p>Edition size 103</p>
+          <p>Numbered and signed by both the poet and the artist.</p>
+          <!--Begin variants and buy button-->
+          <div class="buy">
+            <p class="bold text-center price">
+              $105.00
+            </p>
+          </div>
+
+
+          <div class="add-to-cart">
+            <button id="addBookButton" class="btn button" type="button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="txt-describe">
+          <p>Printed on black Somerset Velvet paper. The text type is handset Perpetua with the display type
+            Charlemagne and printed from a polymer plate. Both the type and graphic were printed on a Vandercook 219
+            proofing press. The top of the graphic was brushed with silver pearl dry pigment as it came off the
+            press.</p>
+        </div>
+      </div><!--Close class="product boxer"-->
+      <!--Begin Modal-->
+    </div><!--Close div page-content-->
+    <!-- Modal with header and footer animated: Note: I removed <h2> header -->
+    <!-- Trigger/Open The Modal -->
+    <div class="text-center">
+      <button class="link-style" id="myBtn">Read the Text</button>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2></h2>
+        </div>
+        <div class="modal-body">
+          <h3>Dependence Day</h3>
+          <p>It would be a quieter holiday, no ﬁreworks<br />
+            or loud parades, no speeches, no salutes to any ﬂag,<br />
+            a day of staying home instead of crowding away,<br />
+            a day we celebrate nothing gained in war<br />
+            but what we’re given—how the sun’s warmth<br />
+            is democratic, touching everyone,<br />
+            and the rain is democratic too,<br />
+            how the strongest branches in the wind<br />
+            give themselves as they resist, resist<br />
+            and give themselves, how birds could have no freedom<br />
+            without the planet’s weight to wing against,<br />
+            how Earth itself could come to be<br />
+            only when a whirling cloud of dust<br />
+            pledged allegiance as a world<br />
+            circling dependently around a star, and the star<br />
+            blossomed into ﬁre from the ash of other stars,<br />
+            and once, at the dark zero of our time,<br />
+            a blaze of revolutionary light<br />
+            exploded out of nowhere, out of nothing,<br />
+            because nothing needed the light,<br />
+            as the brilliance of the light itself needs nothing.</p>
+          <p>© 1994 by John Daniel<br />
+            From <em>All Things Touched By Wind</em>, Salmon Run Press.</p>
+        </div>
+
+      </div>
+    </div> <!--End modal-->
+  </div><!-- End page content -->
+  </div> <!--close wrapper div-->
+  <!-- Modal for showing the broadsides text -->
+  <script src="../../../assets/js/modal_broadsides.js" type="text/javascript"></script>
+  <script>
+    // Function to check and add subarray to booksList in local storage
+    function checkAndAddToBooksList(idValue, titleValue, author, price) {
+      // Retrieve the array from local storage or initialize an empty array if it doesn't exist
+      const booksList = JSON.parse(localStorage.getItem('booksList')) || [];
+
+      // Check if any object in booksList includes the key-value pair 'id': idValue
+      const exists = booksList.some((item) => item.id === `${idValue}`);
+
+      if (!exists) {
+        // If it doesn't exist, add the new object with 'id': idValue and 'title': titleValue
+        booksList.push({
+          id: `${idValue}`,
+          title: `${titleValue}`,
+          author: `${author}`,
+          price: `${price}`,
+        });
+        localStorage.setItem('booksList', JSON.stringify(booksList));
+        console.log(
+          `Added new object with id: "${idValue}" and title: "${titleValue}" and author and price listings to booksList in local storage.`,
+        );
+      } else {
+        // If it exists, do nothing
+        console.log(
+          `Object with id: "${idValue}" already exists in booksList in local storage.`,
+        );
+      }
+    }
+
+    // Values for this item
+    const idValue = 'dd';
+    const titleValue = 'Dependence Day (Broadside)';
+    const author = 'John Daniel';
+    const price = '$105';
+
+    document.getElementById('addBookButton').addEventListener('click', () => {
+      checkAndAddToBooksList(idValue, titleValue, author, price);
+    });
+
+    // Add event listener to the button and show "Item is in cart" text
+    const addToCartBtn = document.querySelector('#addBookButton');
+    const opt = {
+      initialText: 'Add to Cart',
+      textOnClick: 'Item is now in the Cart',
+      interval: 5000,
+    };
+
+    const setAddToCartText = () => {
+      addToCartBtn.innerHTML = opt.textOnClick;
+      const reinit = () => {
+        addToCartBtn.innerHTML = opt.initialText;
+      };
+      setTimeout(reinit, opt.interval);
+    };
+
+    addToCartBtn.addEventListener('click', setAddToCartText);
+  </script>
+</body>
+
+</html>
