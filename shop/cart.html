@@ -1,0 +1,66 @@
+<!Doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>lone goose press shopping cart example</title>
+<link rel="stylesheet" href="../assets/css/lonegoose.css" type="text/css">
+<link rel="stylesheet" href="../assets/css/lonegoose-gridflex.css" type="text/css">
+
+<body class="cart shop">
+
+  <div class="wrapper">
+    <header class="header-cart h1">
+      <img src="./lonegoose.png" alt="lone goose image" width="72" height="72" />
+      <a href="../index.html">
+        <p class="h1">lone goose press</p>
+      </a>
+    </header>
+    <nav> <!--Begin navigation-->
+      <ul class="cart-navigation">
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+        <li>
+          <a href="../publications/books/books.html">Keep Shopping Books</a>
+        </li>
+        <li>
+          <a href="../publications/broadsides/broadsides.html">Keep Shopping Broadsides</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- End navigation-->
+
+    <div class="cart-content">
+      <h1>Your cart</h1>
+    </div>
+
+    <table id="booksTable">
+      <thead>
+        <tr class="cart-row">
+          <th class="cart-title cart-header cart-column" scope="col">Title</th>
+          <th class="cart-author cart-header cart-column" scope="col">Author</th>
+          <th class="cart-price cart-header cart-column" scope="col">Price</th>
+          <th class="cart-quantity cart-column cart-header cart-column" scope="col">Count
+          </th>
+          <th class="cart-remove" scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="cart-items">
+        <!-- Table rows will be dynamically added here -->
+      </tbody>
+    </table>
+
+    <div class="cart-total">Total Amount:
+      <span id="totalPrice" class="cart-quantity-input cart-total-price">0</span>
+    </div>
+    <div class="purchase-button" id="divButton">
+      <button id="purchaseButton" class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+    </div>
+  </div> <!--close wrapper-->
+
+  <script src="../assets/js/cartPageEnterAndUpdate.js">
+  </script>
+</body>
+
+</html>
